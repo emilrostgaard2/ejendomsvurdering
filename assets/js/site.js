@@ -10,6 +10,8 @@
      så vises postnr./by-felterne i stedet. */
   var GS_TOKEN = '';
   var GS_URL = 'https://api.dataforsyningen.dk/rest/gsearch/v2.0/adresse';
+  /* Uden token bruges Photon (OpenStreetMap), som er gratis og ikke kræver nøgle. */
+  var PHOTON_URL = 'https://photon.komoot.io/api/';
 
   /* Eksempler til den "levende" adressetekst i feltet */
   var DEMO = ['Vestergade 12, 8000 Aarhus C', 'Strandvejen 45, 2900 Hellerup', 'Algade 7, 9000 Aalborg',
@@ -73,7 +75,7 @@
     var dots = box.querySelectorAll('.steps li');
     var $ = function (n) { return form.elements[n]; };
     var stopDemo = demoPlaceholder($('adresse'));
-    if (GS_TOKEN) initAC(box, $);
+    initAC(box, $);
 
     function go(n) {
       steps.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-step') === String(n)); });
@@ -254,14 +256,32 @@
       if (!/\d/.test(a.street)) { input.focus(); input.value = a.street + ' '; return; } /* vej uden husnr.: skriv videre */
       var nb = box.querySelector('[data-next]'); if (nb) nb.focus();
     }
+    function photonParse(f) {
+      var p = f.properties || {};
+      if (p.countrycode && p.countrycode !== 'DK') return null;
+      var hn = p.housenumber || '';
+      var street = p.street ? (p.street + (hn ? ' ' + hn : '')) : (p.osm_key === 'highway' ? p.name : '');
+      if (!street) return null;
+      var city = p.city || p.district || p.locality || '';
+      return { label: street + ', ' + (p.postcode || '') + ' ' + city, street: street, postnr: String(p.postcode || '').replace(/\D/g, '').slice(0, 4),
+               by: city, vejnavn: p.street || p.name || '', husnr: hn, etage: '', doer: '', kommunekode: '', id: '' };
+    }
     function search(q) {
       if (ctrl) ctrl.abort();
       ctrl = window.AbortController ? new AbortController() : null;
-      fetch(GS_URL + '?q=' + encodeURIComponent(q) + '&limit=8', { headers: { token: GS_TOKEN }, signal: ctrl ? ctrl.signal : undefined })
+      var opts = { signal: ctrl ? ctrl.signal : undefined }, url;
+      if (GS_TOKEN) { url = GS_URL + '?q=' + encodeURIComponent(q) + '&limit=8'; opts.headers = { token: GS_TOKEN }; }
+      else { url = PHOTON_URL + '?q=' + encodeURIComponent(q) + '&limit=12&bbox=7.9,54.5,15.3,57.9'; }
+      fetch(url, opts)
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (d) {
           if (q !== lastQ) return;
-          items = (Array.isArray(d) ? d : []).map(parse).filter(function (a) { return a.label; });
+          var raw = GS_TOKEN ? (Array.isArray(d) ? d.map(parse) : []) : ((d && d.features) || []).map(photonParse);
+          var seen = {};
+          items = raw.filter(function (a) { if (!a || !a.label || seen[a.label]) return false; seen[a.label] = 1; return true; });
+          /* adresser med husnummer først, derefter veje */
+          items.sort(function (a, b) { return (b.husnr ? 1 : 0) - (a.husnr ? 1 : 0); });
+          items = items.slice(0, 8);
           render(q); if (items.length) mark(0);
         })
         .catch(function (e) { if (e && e.name === 'AbortError') return; box.classList.remove('ac-on'); close(); });
