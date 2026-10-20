@@ -26,7 +26,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=581d056d">
+<link rel="stylesheet" href="/assets/css/site.css?v=9d8046f1">
 <link rel="preconnect" href="https://boligvurderinger.dk" crossorigin>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ejendomsvurdering.dk/#org","name":"ejendomsvurdering.dk","url":"https://ejendomsvurdering.dk/","logo":{"@type":"ImageObject","url":"https://ejendomsvurdering.dk/assets/img/logo.png","width":1476,"height":168},"description":"Uafhængig informationsside om den offentlige ejendomsvurdering, boligskat og boligens markedsværdi.","founder":{"@id":"https://ejendomsvurdering.dk/redaktion/emil-rostgaard/#person"}},{"@type":"WebSite","@id":"https://ejendomsvurdering.dk/#website","url":"https://ejendomsvurdering.dk/","name":"ejendomsvurdering.dk","inLanguage":"da-DK","publisher":{"@id":"https://ejendomsvurdering.dk/#org"}},{"@type":"Person","@id":"https://ejendomsvurdering.dk/redaktion/emil-rostgaard/#person","name":"Emil Rostgaard","jobTitle":"Stifter og redaktør","url":"https://ejendomsvurdering.dk/redaktion/emil-rostgaard/","worksFor":{"@id":"https://ejendomsvurdering.dk/#org"},"knowsAbout":["Offentlig ejendomsvurdering","Ejendomsværdiskat","Grundskyld","Boligmarkedet i Danmark","Salgsvurdering"]},{"@type":"BreadcrumbList","@id":"https://ejendomsvurdering.dk/404.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://ejendomsvurdering.dk/"},{"@type":"ListItem","position":2,"name":"Siden findes ikke","item":"https://ejendomsvurdering.dk/404.html"}]},{"@type":"WebPage","@id":"https://ejendomsvurdering.dk/404.html#webpage","url":"https://ejendomsvurdering.dk/404.html","name":"Siden findes ikke – ejendomsvurdering.dk","description":"Siden kunne ikke findes. Gå til forsiden eller find guides om ejendomsvurdering, klage og boligskat.","inLanguage":"da-DK","isPartOf":{"@id":"https://ejendomsvurdering.dk/#website"},"breadcrumb":{"@id":"https://ejendomsvurdering.dk/404.html#breadcrumb"},"dateModified":"2026-10-20","datePublished":"2026-10-20"}]}</script>
 </head><body>
@@ -53,15 +53,17 @@
   <p class="lead-title">Hvad er din bolig reelt værd?</p>
   <p class="lead-sub">Få en gratis salgsvurdering fra lokale ejendomsmæglere. Det tager 1 minut.</p>
   <div class="fld"><label for="adr-m">Boligens adresse</label>
-    <input class="inp" id="adr-m" name="adresse" type="text" autocomplete="address-line1" placeholder="Vejnavn og husnummer" required>
-    <p class="err-msg" data-err="adresse">Skriv vejnavn og husnummer.</p></div>
-  <div class="g-pc">
+    <div class="ac-wrap"><input class="inp" id="adr-m" name="adresse" type="text" autocomplete="off" placeholder="Vejnavn og husnummer" required role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="acl-m" spellcheck="false">
+    <ul class="ac-list" id="acl-m" role="listbox" aria-label="Adresseforslag" hidden></ul></div>
+    <p class="err-msg" data-err="adresse">Skriv vejnavn og husnummer – eller vælg din adresse på listen.</p></div>
+  <div class="g-pc" data-pc>
     <div class="fld"><label for="pc-m">Postnr.</label>
       <input class="inp" id="pc-m" name="postnr" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="8000" required>
       <p class="err-msg" data-err="postnr">4 cifre</p></div>
     <div class="fld"><label for="by-m">By</label>
       <input class="inp" id="by-m" name="by" type="text" autocomplete="address-level2" placeholder="Aarhus C"></div>
   </div>
+  <input type="hidden" name="vejnavn"><input type="hidden" name="husnr"><input type="hidden" name="etage"><input type="hidden" name="doer"><input type="hidden" name="kommunekode"><input type="hidden" name="adresse_id">
   <button class="btn btn-go btn-block" type="button" data-next>Få gratis salgsvurdering <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <ul class="trust"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratis</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uforpligtende</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lokale mæglere</li></ul>
 </div>
@@ -85,7 +87,7 @@
     <input class="inp" id="tl-m" name="telefon" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="12 34 56 78" required></div>
     <p class="err-msg" data-err="telefon">Telefonnummeret skal have mindst 8 cifre.</p></div>
   <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-  <label class="consent"><input type="checkbox" name="samtykke_kontakt" value="1" required><span data-consent-text>Jeg giver samtykke til, at ejendomsvurdering.dk videregiver mine oplysninger til samarbejdende, lokale ejendomsmæglere (typisk op til 3), som må kontakte mig på telefon og e-mail om en gratis og uforpligtende salgsvurdering. Jeg kan altid trække samtykket tilbage.</span></label>
+  <label class="consent"><input type="checkbox" name="samtykke_kontakt" value="1" required><span data-consent-text>Jeg giver samtykke til, at ejendomsvurdering.dk videregiver mine oplysninger til samarbejdende, lokale ejendomsmæglere (typisk op til 3), som må kontakte mig på telefon og e-mail om en gratis og uforpligtende salgsvurdering. Jeg kan til enhver tid trække samtykket tilbage ved at skrive til <a href="/privatlivspolitik/#traek-samtykke-tilbage">kontakt@ejendomsvurdering.dk</a>.</span></label>
   <p class="err-msg" data-err="samtykke" style="margin-top:-.6rem;margin-bottom:.8rem">Sæt flueben for at give samtykke – ellers kan mæglerne ikke kontakte dig.</p>
   <button class="btn btn-go btn-block" type="submit">Send – få gratis salgsvurdering</button>
   <p class="err-msg" data-err="send" role="alert"></p>
@@ -104,15 +106,17 @@
   <p class="lead-title">Hvad er din bolig reelt værd?</p>
   <p class="lead-sub">Få en gratis salgsvurdering fra lokale ejendomsmæglere. Det tager 1 minut.</p>
   <div class="fld"><label for="adr-s">Boligens adresse</label>
-    <input class="inp" id="adr-s" name="adresse" type="text" autocomplete="address-line1" placeholder="Vejnavn og husnummer" required>
-    <p class="err-msg" data-err="adresse">Skriv vejnavn og husnummer.</p></div>
-  <div class="g-pc">
+    <div class="ac-wrap"><input class="inp" id="adr-s" name="adresse" type="text" autocomplete="off" placeholder="Vejnavn og husnummer" required role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="acl-s" spellcheck="false">
+    <ul class="ac-list" id="acl-s" role="listbox" aria-label="Adresseforslag" hidden></ul></div>
+    <p class="err-msg" data-err="adresse">Skriv vejnavn og husnummer – eller vælg din adresse på listen.</p></div>
+  <div class="g-pc" data-pc>
     <div class="fld"><label for="pc-s">Postnr.</label>
       <input class="inp" id="pc-s" name="postnr" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="8000" required>
       <p class="err-msg" data-err="postnr">4 cifre</p></div>
     <div class="fld"><label for="by-s">By</label>
       <input class="inp" id="by-s" name="by" type="text" autocomplete="address-level2" placeholder="Aarhus C"></div>
   </div>
+  <input type="hidden" name="vejnavn"><input type="hidden" name="husnr"><input type="hidden" name="etage"><input type="hidden" name="doer"><input type="hidden" name="kommunekode"><input type="hidden" name="adresse_id">
   <button class="btn btn-go btn-block" type="button" data-next>Få gratis salgsvurdering <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <ul class="trust"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratis</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uforpligtende</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 2.9 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lokale mæglere</li></ul>
 </div>
@@ -136,7 +140,7 @@
     <input class="inp" id="tl-s" name="telefon" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="12 34 56 78" required></div>
     <p class="err-msg" data-err="telefon">Telefonnummeret skal have mindst 8 cifre.</p></div>
   <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-  <label class="consent"><input type="checkbox" name="samtykke_kontakt" value="1" required><span data-consent-text>Jeg giver samtykke til, at ejendomsvurdering.dk videregiver mine oplysninger til samarbejdende, lokale ejendomsmæglere (typisk op til 3), som må kontakte mig på telefon og e-mail om en gratis og uforpligtende salgsvurdering. Jeg kan altid trække samtykket tilbage.</span></label>
+  <label class="consent"><input type="checkbox" name="samtykke_kontakt" value="1" required><span data-consent-text>Jeg giver samtykke til, at ejendomsvurdering.dk videregiver mine oplysninger til samarbejdende, lokale ejendomsmæglere (typisk op til 3), som må kontakte mig på telefon og e-mail om en gratis og uforpligtende salgsvurdering. Jeg kan til enhver tid trække samtykket tilbage ved at skrive til <a href="/privatlivspolitik/#traek-samtykke-tilbage">kontakt@ejendomsvurdering.dk</a>.</span></label>
   <p class="err-msg" data-err="samtykke" style="margin-top:-.6rem;margin-bottom:.8rem">Sæt flueben for at give samtykke – ellers kan mæglerne ikke kontakte dig.</p>
   <button class="btn btn-go btn-block" type="submit">Send – få gratis salgsvurdering</button>
   <p class="err-msg" data-err="send" role="alert"></p>
@@ -159,5 +163,5 @@
 <div class="f-legal"><span>© 2026 ejendomsvurdering.dk · Indholdet er generel information og ikke juridisk eller skattemæssig rådgivning.</span><span>Siden indeholder annoncering: Vi kan modtage betaling, når vi formidler en salgsvurdering. <a href="/om-os/#annoncering">Læs mere</a></span></div>
 </div></footer>
 <div class="mcta"><a class="btn btn-go" href="#vurdering-s">Få gratis salgsvurdering <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-<script src="/assets/js/site.js?v=581d056d" defer></script>
+<script src="/assets/js/site.js?v=9d8046f1" defer></script>
 </body></html>
