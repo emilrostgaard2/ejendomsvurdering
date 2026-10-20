@@ -1,0 +1,25 @@
+# ejendomsvurdering.dk
+
+> Uafhængig dansk guide til den offentlige ejendomsvurdering, ejendomsværdiskat, grundskyld, klage og boligens markedsværdi. Ikke en offentlig myndighed; officielle vurderinger findes på vurderingsportalen.dk.
+
+Redaktør: Emil Rostgaard. Sidst opdateret: 2026-10-20.
+
+## Guides
+- [Ejendomsvurdering – sådan virker den offentlige vurdering i 2026](https://ejendomsvurdering.dk/): Alt om den offentlige ejendomsvurdering: 2026-vurderingen, 20 %-reglen, klage, boligskat og hvad din bolig reelt kan sælges for. Opdateret oktober 2026.
+- [Anmod om ordinær vurdering i 2026 – sådan virker 20 %-reglen](https://ejendomsvurdering.dk/anmod-om-ordinaer-vurdering/): 2026-vurderingen kan ikke påklages, men du kan anmode om en ordinær vurdering, hvis afvigelsen er over 20 %. Se reglerne og hvordan du regner det ud.
+- [Deklaration – tjek og ret fejl før din ejendomsvurdering](https://ejendomsvurdering.dk/deklaration/): Deklarationen viser, hvad din ejendomsvurdering bygger på. Du har 4 uger til at gøre indsigelse. Se hvad du skal tjekke, og hvornår fejl bliver rettet.
+- [Ejendomsværdiskat 2026 – beregn din skat og forstå reglerne](https://ejendomsvurdering.dk/ejendomsvaerdiskat/): Beregn ejendomsværdiskat 2026: 0,51 % af 80 % af vurderingen og 1,4 % over 9.007.000 kr. Se regneeksempler, skatterabat og nedslag – gratis beregner.
+- [Ejendomsvurdering 2026 – prisfremskrivningen forklaret](https://ejendomsvurdering.dk/ejendomsvurdering-2026/): Ejendomsvurdering 2026 er 2022-vurderingen prisfremskrevet. Se hvad det betyder for boligskatten 2027, og hvornår 20 %-reglen giver ny vurdering.
+- [Ejendomsvurdering for høj – sådan griber du det an](https://ejendomsvurdering.dk/ejendomsvurdering-for-hoej/): Er din ejendomsvurdering for høj? Se hvornår du kan klage, hvordan 20 %-reglen virker, og hvorfor en lavere vurdering kan koste dig skatterabat.
+- [Er din ejendomsvurdering for lav? Det betyder det for skat og salg](https://ejendomsvurdering.dk/ejendomsvurdering-for-lav/): En lav offentlig vurdering giver lavere skat – men ikke en lavere salgspris. Se om det kan betale sig at klage, og hvad du gør, hvis du skal sælge i 2026.
+- [Grundskyld – sådan beregnes skatten af din grund](https://ejendomsvurdering.dk/grundskyld/): Grundskyld er kommunens promille af 80 % af grundværdien. Se regneeksempel, promiller fra 3,10 til 17,70 ‰ og hvad du betaler i din kommune.
+- [Hvad er mit hus værd? 4 måder at finde den reelle værdi](https://ejendomsvurdering.dk/hvad-er-mit-hus-vaerd/): Den offentlige vurdering er ikke salgsprisen. Se 4 måder at finde dit hus' reelle værdi – og få en gratis salgsvurdering fra lokale ejendomsmæglere.
+- [Indefrysning af boligskat – boligskattelån og skatterabat forklaret](https://ejendomsvurdering.dk/indefrysning-af-boligskat/): Stigninger i boligskatten indefryses automatisk som lån. Fravælg senest 31.12.2026. Se rente, regler ved salg og forskellen på lån og skatterabat.
+- [Klage over ejendomsvurdering – sådan gør du trin for trin](https://ejendomsvurdering.dk/klage-over-ejendomsvurdering/): Sådan klager du over din ejendomsvurdering: frist på 90 dage, gebyr på 1.300 kr. i 2026 og 20 %-reglen. Se hvilken dokumentation der virker.
+- [Metode og kilder](https://ejendomsvurdering.dk/metode-og-kilder/): Sådan researcher, faktatjekker og opdaterer ejendomsvurdering.dk artikler om ejendomsvurdering og boligskat – og hvilke officielle kilder vi bygger på.
+- [Nye ejendomsvurderinger – status og tidsplan](https://ejendomsvurdering.dk/nye-ejendomsvurderinger/): Nye ejendomsvurderinger: 1,30 mio. har fået 2022-vurderingen og 790.000 2024-vurderingen pr. 5. oktober 2026. Se tidsplanen, og hvornår du får din.
+- [Offentlig vurdering vs. markedsværdi – derfor er tallene forskellige](https://ejendomsvurdering.dk/offentlig-vurdering-vs-markedsvaerdi/): Hvorfor afviger din offentlige vurdering fra salgsprisen? Se hvad den bygger på, hvad 20 %-reglerne betyder, og hvordan du finder boligens reelle værdi.
+- [Om ejendomsvurdering.dk](https://ejendomsvurdering.dk/om-os/): Hvem står bag ejendomsvurdering.dk, hvordan vi arbejder, og hvordan siden tjener penge. Vi er uafhængige og ikke en del af Vurderingsstyrelsen.
+- [Emil Rostgaard](https://ejendomsvurdering.dk/redaktion/emil-rostgaard/): Emil Rostgaard er stifter og redaktør af ejendomsvurdering.dk og står bag guides om den offentlige ejendomsvurdering, boligskat og salgsvurdering.
+- [Gratis salgsvurdering – sådan får du et realistisk bud på din boligs pris](https://ejendomsvurdering.dk/salgsvurdering/): Få en gratis og uforpligtende salgsvurdering fra lokale ejendomsmæglere. Bolius anbefaler mindst 3 vurderinger. Se hvordan det foregår, og forbered dig.
+- [Se din ejendomsvurdering – sådan finder du den](https://ejendomsvurdering.dk/se-din-ejendomsvurdering/): Se din ejendomsvurdering på vurderingsportalen.dk, i Digital Post eller på forskudsopgørelsen. Trin for trin – og hvad du gør, hvis tallet er forkert.
